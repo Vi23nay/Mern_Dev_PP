@@ -10,6 +10,7 @@ const Form = () => {
    const [record,setrecord] = useState([]);
 
    const userregistration = (e)=>{
+       let a = 10;
        let name = e.target.name;//name mai feild ayi hogi like email etc
        let value = e.target.value;//value mai user ne jo value type kari hai voh ayi hogi
        setuser({...user, [name]:value});
