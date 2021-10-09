@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <title>SEARCH</title>
+    
+</head>
+
+
+<body>
+
+    <div class="upper">
+        <div class="symbol">
+            <i class="fab fa-playstation"></i>
+            <div class="text1">GAME HACK</div>
+        </div>
+        <div class="upper-content">
+            <div class="home">Home</div>
+            <div class="games">Search</div>
+            <div class="blogs">About Us</div>
+            <div class="contact">Contact</div>
+        </div>
+        <div class="login">
+            <i class="fas fa-user-circle"></i>
+            <div class="logintext">
+                SIGNED IN
+            </div>
+        </div>
+    </div>
+
+
+    <form id="formbtn" onsubmit="dataAPI(event)">
+        <input id='query' type="text">
+        <button type="submit" >search</button>
+    </form>
+    <div id='gameData'>
+
+    </div>
+
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.upper {
+    background: black;
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px;
+    position: fixed;
+    z-index: 2;
+}
+
+.text1 {
+    background: black;
+    height: 100%;
+    width: 64%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fab {
+    background: black;
+    height: 100%;
+    width: 22%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.upper-content {
+    background: black;
+    display: flex;
+    height: 8vh;
+    width: 34vw;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.symbol {
+    height: 10vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.home:hover {
+    background-color: orange;
+}
+
+.games:hover {
+    background-color: orange;
+}
+
+.blogs:hover {
+    background-color: orange;
+}
+
+.forms:hover {
+    background-color: orange;
+}
+
+.contact:hover {
+    background-color: orange;
+}
+
+.login {
+    background: orange;
+    height: 6vh;
+    width: 12vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid orange;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.fas {
+    font-size: xx-large;
+}
+
+
+        #formbtn{
+            background: darkcyan;
+            height: 25vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        #query{
+            background: darkcyan;
+    width: 50vw;
+    border: 2px solid;
+        }
+        #gameData{
+                background: darkcyan;
+    height: 1000vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 25px;
+        }
+
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+<script src="search_script.js"></script>
+    <script src="./movementhomepage.js"></script>
+    
+</body>
+</html>

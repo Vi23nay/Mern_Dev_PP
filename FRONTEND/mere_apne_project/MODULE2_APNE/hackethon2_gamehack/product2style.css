@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.upper {
+    background: black;
+    display: flex;
+    height: 10vh;
+    width: 98.9vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px;
+    position: fixed;
+    z-index: 2;
+}
+
+.text1 {
+    background: black;
+    height: 100%;
+    width: 64%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fab {
+    background: black;
+    height: 100%;
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.upper-content {
+    background: black;
+    display: flex;
+    height: 8vh;
+    width: 34vw;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.symbol {
+    height: 10vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.home:hover {
+    background-color: orange;
+}
+
+.games:hover {
+    background-color: orange;
+}
+
+.blogs:hover {
+    background-color: orange;
+}
+
+.forms:hover {
+    background-color: orange;
+}
+
+.contact:hover {
+    background-color: orange;
+}
+
+.login {
+    background: orange;
+    height: 6vh;
+    width: 12vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid orange;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.fas {
+    font-size: xx-large;
+}
+
+.contentsp1 {
+    background: #F1F3F6;
+    height: 255vh;
+    width: 98.92vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.content1p1 {
+    background: #F1F3F6;
+    height: 73vh;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p1photos {
+    background: blueviolet;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+}
+
+.p1details {
+    background: #FFFFFF;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.p1description {
+    background: #FFFFFF;
+    height: 92%;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.d1 {
+    background: #FFFFFF;
+    height: 35%;
+    width: 100%;
+    font-weight: 500;
+}
+
+#pricep1 {
+    font-size: x-large;
+}
+
+.content2p1 {
+    background: #F1F3F6;
+    height: 75vh;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7px;
+}
+
+#addtocartb {
+    background: orange;
+    height: 60px;
+    width: 70%;
+    cursor: pointer;
+}
+
+#addtocartb:hover {
+    background-color: red;
+}
+
+#showmorebp2 {
+    background: floralwhite;
+    height: 40px;
+    width: 8vw;
+}
+
+#showmorebp2:hover {
+    background-color: grey;
+}
+
+#paragraphdes {
+    overflow: auto;
+}
+
+.content3p1 {
+    background: #F1F3F6;
+    height: 90vh;
+    width: 92vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#headingh2 {
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.c3p1 {
+    background: black;
+    height: 91%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#viewcartbp2 {background: orange;height: 26%;width: 70%;cursor: pointer;}
+#viewcartbp2:hover{
+    background-color: red;
+}
+
+.buttonsp1{
+    
+background: #FFFFFF;
+    
+height: 63%;
+    
+width: 100%;
+    
+display: flex;
+    
+flex-direction: column;
+    
+justify-content: space-between;
+    
+align-items: center;
+    
+padding: 2px;
+}
+#messageinterest{
+    
+background: aliceblue;
+    
+height: 25%;
+    
+width: 100%;
+    
+display: flex;
+    
+justify-content: center;
+    
+align-items: center;
+}
+
+.viewcartshow{
+    
+height: 74%;
+    
+width: 100%;
+    
+display: flex;
+    
+flex-direction: column;
+    
+justify-content: space-around;
+    
+align-items: center;
+}
+

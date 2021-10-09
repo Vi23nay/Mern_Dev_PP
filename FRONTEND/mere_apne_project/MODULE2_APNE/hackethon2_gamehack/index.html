@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="symbol">
+        <i class="fab fa-playstation"></i>
+        <div class="text1">GAME HACK</div>
+    </div>
+    <div class="backgroundlogin">
+        <img src="https://i.pinimg.com/originals/26/c2/93/26c2932cd4beff0f3cc992391bd75922.gif" alt="IMAGE NOT FOUND" style="height:100vh;width:100vw;">
+    </div>
+    <div class="logindetails">
+        <div class="loginname">SIGN IN</div>
+        <form id="login-form">
+            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+            <input type="submit" onclick= "return checklogin()" value="Login" id="login-form-submit">
+          </form>
+          <h4 style="color:green;">This page is for demo purpose only, Login details are as follows username is u and password is p</h4>
+    </div>
+
+    <script src="./loginscript.js"></script>
+</body>
+</html>

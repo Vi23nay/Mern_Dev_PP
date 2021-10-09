@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.upper {
+    background: black;
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px;
+    position: fixed;
+    z-index: 2;
+}
+
+.text1 {
+    background: black;
+    height: 100%;
+    width: 64%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fab {
+    background: black;
+    height: 100%;
+    width: 22%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.upper-content {
+    background: black;
+    display: flex;
+    height: 8vh;
+    width: 34vw;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.symbol {
+    height: 10vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.home:hover {
+    background-color: orange;
+}
+
+.games:hover {
+    background-color: orange;
+}
+
+.blogs:hover {
+    background-color: orange;
+}
+
+.forms:hover {
+    background-color: orange;
+}
+
+.contact:hover {
+    background-color: orange;
+}
+
+.login {
+    background: orange;
+    height: 6vh;
+    width: 12vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid orange;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.fas {
+    font-size: xx-large;
+}
+
+.contentsbuynow {
+    background: darkcyan;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcontent {
+    height: 80vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: azure;
+}

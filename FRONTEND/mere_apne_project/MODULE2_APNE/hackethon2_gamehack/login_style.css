@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.symbol {
+    height: 10vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 17px;
+}
+
+.text1 {
+    background: black;
+    height: 100%;
+    width: 64%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fab {
+    background: black;
+    height: 100%;
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.backgroundlogin {
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logindetails {
+    height: 50vh;
+    width: 40vw;
+    background: #1B2838;
+    position: absolute;
+    top: 200px;
+    left: 452px;
+}
+
+.loginname {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 700;
+    color: whitesmoke;
+}
+
+.username {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    flex-direction: column;
+}
+
+.pass {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginbutton {
+    height: 29%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+#u {
+    height: 40%;
+    width: 57%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3px;
+}
+
+#p {
+    height: 40%;
+    width: 57%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3px;
+}
+
+#lbutton {
+    height: 40%;
+    width: 57%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lbutton:hover{
+    background-color: red;
+    opacity: 0.8;
+}
+
+.usertext{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+color: ghostwhite;
+
+font-size: larger;
+
+padding: 4px;
+}
+
+.passtext{
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+color: ghostwhite;
+
+font-size: larger;
+
+padding: 4px;
+}
+
+#username-field{
+
+background: antiquewhite;
+
+height: 13%;
+
+width: 50%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: flex-start;
+
+padding: 3px;
+}
+
+#password-field{
+
+background: antiquewhite;
+
+height: 13%;
+
+width: 50%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: flex-start;
+
+padding: 3px;
+}
+
+#login-form-submit{
+
+background: antiquewhite;
+
+height: 13%;
+
+width: 25%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+padding: 3px;
+
+cursor: pointer;
+}
+#login-form{
+
+background: #1B2838;
+
+height: 74%;
+
+width: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: space-evenly;
+}
+

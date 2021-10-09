@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.contents{
+    background: aqua;
+    height: 600vh;
+    width: 100vw;
+}
+.contents1{
+    background-color: azure;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/landspeed-collection/page-components/04_bg_hero_wraith/BG_HERO_WRAITH_D.jpg/jcr:content/renditions/cq5dam.web.1920.webp");
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding: 243px;
+}
+#namecar{
+    color: white;
+}
+#namecar1{
+    color: yellow;
+    font-family: 'Open Sans', sans-serif;
+    font-size: -webkit-xxx-large;
+}
+.discovermore{
+    height: 40px;
+    width: 170px;
+    height: 40px;
+    width: 170px;
+    border: 1px solid white;
+    border-radius: 20%;
+}
+.contents2{
+    background-color: azure;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.c2{
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    top: 132vh;
+    position: absolute;
+    font-size: xx-large;
+    
+}
+.c2h1{
+    color: whitesmoke;
+    font-weight: 200;
+    background-size: difference;
+}
+.youtubec2style{
+    background-color: blue;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.contents3{
+    background-color: azure;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://wallpapercave.com/wp/wp7749205.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}

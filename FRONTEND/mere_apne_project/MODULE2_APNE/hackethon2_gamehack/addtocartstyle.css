@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.upper {
+    background: black;
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px;
+    position: fixed;
+    z-index: 2;
+}
+
+.text1 {
+    background: black;
+    height: 100%;
+    width: 64%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fab {
+    background: black;
+    height: 100%;
+    width: 22%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.upper-content {
+    background: black;
+    display: flex;
+    height: 8vh;
+    width: 34vw;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.symbol {
+    height: 10vh;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.home:hover {
+    background-color: orange;
+}
+
+.games:hover {
+    background-color: orange;
+}
+
+.blogs:hover {
+    background-color: orange;
+}
+
+.forms:hover {
+    background-color: orange;
+}
+
+.contact:hover {
+    background-color: orange;
+}
+
+.login {
+    background: orange;
+    height: 6vh;
+    width: 12vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid orange;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.fas {
+    font-size: xx-large;
+}
+
+.contents {
+    height: 200vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: darkcyan;
+}
+
+.p0 {
+    height: 25%;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.imagediv {
+    background: aliceblue;
+    height: 100%;
+    width: 60%;
+}
+
+.details {
+    background: whitesmoke;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.namedetails {
+    background: aliceblue;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pricediv {
+    background: aliceblue;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#buynowb {
+    height: 6vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1443px;
+    cursor: pointer;
+    left: 989px;
+}
+
+#buynowb:hover {
+    background-color: orange;
+}
+
+#clearcart {
+    height: 6vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1443px;
+    cursor: pointer;
+    left: 151px;
+}
+
+#clearcart:hover {
+    background-color: orange;
+}
+
+.shopping {
+    position: absolute;
+    top: 102px;
+    height: 10vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rebeccapurple;
+}
+
+.fa-shopping-cart {
+    background: aliceblue;
+    height: 100%;
+    width: 6%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+}
+
+.shoppingtext {
+    background: aliceblue;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
