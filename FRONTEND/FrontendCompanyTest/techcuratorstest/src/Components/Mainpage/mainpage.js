@@ -144,6 +144,7 @@ let useStyles = makeStyles((theme) => ({
     display:"flex",
     justifyContent:"space-evenly",
     alignItems:"center",
+    flexWrap:"wrap",
     marginLeft:"1rem",
     marginBottom:"1rem",
     [theme.breakpoints.down("md")]: {
