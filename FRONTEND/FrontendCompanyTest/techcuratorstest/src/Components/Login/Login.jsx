@@ -16,6 +16,8 @@ import {
   Avatar
 } from "@material-ui/core";
 import useStyles from "./login";
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
     const [name,setname] = useState("");
@@ -40,12 +42,37 @@ const Login = () => {
                 onChange={(e)=> setemail(e.target.value)} 
                 value={email}  type="text" style={{padding:"1rem"}} 
                 placeholder="Email"  />
-
-                <Button type="submit"  variant="contained" 
-                style={{height:"10%",width:"50%",marginTop:"2rem",backgroundColor:"black",color:"red"}}>
+                
+                {
+                    (name && email) ?
+                    (
+                        <div>
+                        <Link to="/mainpage"
+                        style={{height:"10%",width:"50%",marginTop:"2rem",backgroundColor:"black",color:"red"}}
+                        >
+                        <Button type="submit"  
+                        variant="contained" 
+                        style={{height:"100%",width:"100%",marginTop:"2rem",backgroundColor:"black",color:"red"}}
+                        >
+                    
+                    Join
+                    
+                </Button>
+                </Link>
+                </div>
+                    )
+                    :
+                    (
+                        <>
+                        <Button type="submit"  
+                variant="contained" 
+                style={{height:"10%",width:"20%",marginTop:"2rem",backgroundColor:"black",color:"red"}}>
                     Join
                 </Button>
-
+                </>
+                    )
+                }
+                
             </form>
             </Card>
         </div>

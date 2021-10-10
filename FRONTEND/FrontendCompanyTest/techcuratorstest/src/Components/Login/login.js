@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import img from "../../Assests/tech_curatorimage.jpg";
 
 let useStyles = makeStyles((theme) => ({
   maindiv: {

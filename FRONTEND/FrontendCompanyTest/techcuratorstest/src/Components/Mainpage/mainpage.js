@@ -1,0 +1,167 @@
+import { makeStyles } from "@material-ui/core";
+
+let useStyles = makeStyles((theme) => ({
+  header:{
+      height:"4vh",
+      width:"100vw",
+      display:"flex",
+      justifyContent:"space-around",
+      alignItems:"center",
+      backgroundColor:"lightblue",
+  },
+  maindiv: {
+    height:"95.9vh",
+    width:"100vw",
+    display:"flex",
+    backgroundColor:"#333744",
+  },
+  leftmiddlediv:{
+    height:"100%",
+    width:"40%",
+    display:"flex",
+    [theme.breakpoints.down("md")]: {
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      flexDirection:"column",
+      width:"30%",
+  }
+  },
+  leftdiv:{
+      height:"100%",
+      width:"40%",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center",
+      backgroundColor:"white",
+      [theme.breakpoints.down("md")]: {
+        height:"70%",
+        width:"100%",
+    }
+  },
+  middlediv:{
+    height:"100%",
+    width:"60%",
+    display:"flex",
+    justifyContent:"flex-start",
+    alignItems:"center",
+    flexDirection:"column",
+    backgroundColor:"#333744",
+    [theme.breakpoints.down("md")]: {
+      height:"30%",
+      width:"100%",
+  }
+  },
+  lefttopdiv:{
+    height:"40%",
+    width:"100%",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"flex-start",
+    alignItems:"center",
+    [theme.breakpoints.down("md")]: {
+      height:"50%",
+      width:"100%",
+  }
+},
+  leftdivbottom:{
+    width:"100%",
+    height:"60%",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"flex-end",
+    alignItems:"center",
+    overflow:"auto",
+    marginBottom:"1rem",
+    [theme.breakpoints.down("md")]: {
+      height:"50%",
+      width:"100%",
+  }
+  },
+  chatBotdiv:{
+    width:"100%",
+    height:"100%",
+    overflow:"auto",
+  },
+  rightdiv:{
+    height:"100%",
+    width:"60%",
+    display:"flex",
+    flexDirection:"column",
+    backgroundColor:"#333744",
+    [theme.breakpoints.down("md")]: {
+        width:"70%",
+    }
+  },
+  topdiv:{
+    height:"80vh",
+    width:"100%",
+    display:"flex",
+    justifyContent:"flex-start",
+    alignItems:"flex-start",
+    flexDirection:"column",
+    backgroundColor:"whitesmoke",
+  },
+  bottomdiv:{
+      height:"20%",
+      width:"100%",
+      backgroundColor:"whitesmoke",
+  },
+  typographycontent:{
+    height:"5%",
+    width:"30%",
+    display:"flex",
+    justifyContent:"flex-start",
+    alignItems:"center",
+    marginLeft:"1rem",
+    backgroundColor:"lightgray",
+    borderRadius:"11px",
+    marginBottom:"1rem",
+    marginTop:"1rem",
+    [theme.breakpoints.down("md")]: {
+        height:"5%",
+        width:"70%",
+    }
+  },
+  paper:{
+    height:"50%",
+    width:"50%",
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"lightgrey",
+    marginLeft:"1rem",
+    [theme.breakpoints.down("md")]: {
+        height:"50%",
+        width:"100%",
+        marginLeft:"0rem",
+    }
+  },
+  optionsdiv:{
+    height:"60%",
+    width:"60%",
+    display:"flex",
+    justifyContent:"space-evenly",
+    alignItems:"center",
+    marginLeft:"1rem",
+    marginBottom:"1rem",
+    [theme.breakpoints.down("md")]: {
+        height:"60%",
+        width:"90%",
+    }
+  },
+  messagediv:{
+    height:"20%",
+    width:"98%",
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    marginLeft:"1rem",
+    [theme.breakpoints.down("md")]: {
+        height:"20%",
+        width:"90%",
+    }
+  },
+}));
+export default useStyles;
