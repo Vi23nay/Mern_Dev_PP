@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   let value = {
-    currentUser:currentUser,
+    currentUser,
     signOut: signOut,
     login: login,
     signUp: signUp,
