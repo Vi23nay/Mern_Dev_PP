@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import {
     Grid,
     Button,
@@ -11,7 +10,6 @@ import {
     Avatar,
   } from "@material-ui/core";
 
-
 const MainPage = () => {
     return ( 
         <div>
@@ -21,5 +19,4 @@ const MainPage = () => {
         </div>
      );
 }
- 
 export default MainPage;
