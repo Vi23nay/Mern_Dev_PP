@@ -1,6 +1,6 @@
 // npm init -y
 // npm i express
-// npm i nodemon 
+// npm i nodemon
 const express = require("express");
 // Server: // route  -> request -> response/file 
 // File system// path -> interact/type -> file /folder
@@ -49,6 +49,7 @@ app.get("/user/:id", function (req, res) {
     console.log(req.params.id);
     res.status(200).send("Hello");
 })
+
 //localhost:8080 ??
 app.listen(3000, function () {
     console.log("server started");
