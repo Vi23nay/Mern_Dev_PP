@@ -117,7 +117,7 @@ let logoutclick = document.querySelector('#logoutb');
         window.location.assign("./index.html");
     });
 
-f=true;
+    f=true;
     }
     else{
         let modalbtn = document.querySelector('.usermodal');

@@ -5,10 +5,10 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Header from "./Components/Header";
-import Feeds from "./Components/Feeds";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
+// import Header from "./Components/";
+import Feeds from "./Components/Discussion/Discussion.jsx";
+import Login from "./Components/Login/Login.jsx";
+import Signup from "./Components/SignUp/Signup.jsx";
 import { AuthContext, AuthProvider } from "./context/AuthProvider";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <AuthProvider>
        <Router>
         <div className="App">
-          <Header></Header>
+          {/* <Header></Header> */}
           <Switch>
             <Route path="/login" component={Login} exact></Route>
             <Route path="/signup" component={Signup} exact></Route>

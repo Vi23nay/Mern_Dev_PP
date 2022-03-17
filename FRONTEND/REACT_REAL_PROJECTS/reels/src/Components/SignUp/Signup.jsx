@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
-import { firebaseDB, firebaseStorage } from "../config/firebase";
-import { AuthContext } from "../context/AuthProvider";
-import logo  from "../logo.png";
+import { firebaseDB, firebaseStorage } from "../../config/firebase";
+import { AuthContext } from "../../context/AuthProvider";
 import BackupSharpIcon from '@material-ui/icons/BackupSharp';
 import { Link } from "react-router-dom";
 import {
@@ -18,6 +17,7 @@ import {
   makeStyles,
   IconButton,
 } from "@material-ui/core";
+import s from "../Login/stlying";
 
 
 const Signup = (props) => {
@@ -26,11 +26,19 @@ const Signup = (props) => {
   const [username, setUsername] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   const [message, setMessage] = useState("");
+  const [waitmessage, setwaitmessage] = useState("");
   const { signUp } = useContext(AuthContext);
 
   const handleFileSubmit = (event) => {
     let fileObject = event.target.files[0];
     setProfileImage(fileObject);
+  };
+
+  const signInsucess = ()=>{
+    setwaitmessage("Wait while we sign you up you will be redirected to Homepage, if any error occur it will be shown below");
+    setTimeout(
+      15000
+    );
   };
 
   const handleSignUp = async () => {
@@ -64,53 +72,29 @@ const Signup = (props) => {
           userId: uid,
           username: username,
           profileImageUrl: profileImageUrl,
-          postsCreated:[]
+          postsCreated:[],
+          productPurchasedName:[],
+          productbuyed:[],
+          countofproducts:[0],
         });
         props.history.push("/");
       }
-    } catch (err) {
+      setMessage("");
+    }
+    catch (err) {
       setMessage(err.message);
     }
   };
 
-  let useStyles = makeStyles({
-    centerDivs: {
-      height: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      width: "100vw",
-    },
-    carousal: { height: "10rem", backgroundColor: "lightgray" },
-    fullWidth: {
-      width: "100%",
-    },
-    centerElements: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    mb: {
-      marginBottom: "1rem",
-    },
-    padding: {
-      paddingTop: "1rem",
-      paddingBottom: "1rem",
-    },
-    alignCenter: {
-      justifyContent: "center",
-    },
-  });
+  let useStyles = makeStyles(s);
   let classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <Container>
         <Grid container spacing={2} style={{justifyContent : "space-around"}}>
           <Grid item sm={6}>
-            <Card variant="outlined" className={classes.mb}>
-              <CardMedia
-              image={logo}
-              style={{ height: "5rem", backgroundSize: "contain" }}
-              ></CardMedia>
+            <Card variant="outlined" className={classes.mb,classes.mt}>
               <CardContent className = {classes.centerElements}>
 
               <TextField
@@ -164,22 +148,35 @@ const Signup = (props) => {
                   <Button
                   variant="contained"
                   color="primary"
-                  onClick={handleSignUp}
+                  onClick={(e) => {
+                    handleSignUp();
+                    signInsucess();
+                  }}
+                  // onClick={handleSignUp}
                   className={classes.fullWidth}
                 >
                   Sign Up
                 </Button>
               </CardActions>
+
+
+              <Typography
+                style={{ color: "blue" }}
+                variant="h6"
+                >{waitmessage}</Typography>
+
+
               <Typography
                 style={{ color: "red" }}
                 variant="h5"
                 >{message}</Typography>
+
               </CardContent>
             </Card>
 
             <Card variant="outlined" className={classes.padding}>
               <Typography style={{ textAlign: "center" }}>
-                Don't have an account ?
+                Have an account ?
                 <Button variant="contained" color="primary">
                   <Link style={{ color: "white" }} to="/login">
                     Login
@@ -192,48 +189,8 @@ const Signup = (props) => {
         </Grid>
 
 
-
-
       </Container>
     </div>
-    // <>
-    //   <h1>Signup Page</h1>
-    //   <div>
-    //     <div>
-    //       Username
-    //       <input
-    //         value={username}
-    //         onChange={(e) => setUsername(e.target.value)}
-    //       ></input>
-    //     </div>
-    //     <div>
-    //       Email
-    //       <input
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //       ></input>
-    //     </div>
-    //     <div>
-    //       Password
-    //       <input
-    //         value={password}
-    //         onChange={(e) => setPassword(e.target.value)}
-    //       ></input>
-    //     </div>
-    //     <div>
-    //       Profile Image
-    //       <input
-    //         type="file"
-    //         accept="image/*"
-    //         onChange={(e) => {
-    //           handleFileSubmit(e);
-    //         }}
-    //       ></input>
-    //     </div>
-    //   </div>
-    //   <button onClick={handleSignUp}>SignUp</button>
-    //   <h2 style={{ color: "red" }}>{message}</h2>{" "}
-    // </>
   );
 };
 

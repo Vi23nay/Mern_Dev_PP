@@ -20,4 +20,3 @@ function openpage(idx){
         console.log(idx);
     }
 }
-

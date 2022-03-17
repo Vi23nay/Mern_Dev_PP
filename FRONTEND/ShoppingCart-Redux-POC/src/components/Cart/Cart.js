@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import {coupons} from '../../constants/coupons'
 import { Link } from 'react-router-dom';
-
 function Cart1({cart}) {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
@@ -14,8 +13,6 @@ function Cart1({cart}) {
     const [loading,setLoading] =useState(true);
     const [success,setSuccess]=useState(null);
     const [oldPrice,setoldPrice] =useState(null);
-   
-    
     const getText=(e)=>{
       setCoupon(e.target.value)
     }
@@ -125,7 +122,6 @@ function Cart1({cart}) {
         </>
 }
         </>
-        
         <div className='checkout'>
           <Link to="/buynow">
         <Button variant="contained" color="primary">

@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthProvider";
+import { AuthContext } from "../../context/AuthProvider";
 import { Link } from "react-router-dom";
-import logo from "../logo.png";
-
 import {
   TextField,
   Grid,
@@ -16,6 +14,7 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
+import s from "./stlying";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -35,44 +34,15 @@ const Login = (props) => {
     }
   };
 
-  let useStyles = makeStyles({
-    centerDivs: {
-      height: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      width: "100vw",
-    },
-    carousal: { height: "10rem", backgroundColor: "lightgray" },
-    fullWidth: {
-      width: "100%",
-    },
-    centerElements: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    mb: {
-      marginBottom: "1rem",
-    },
-    padding: {
-      paddingTop: "1rem",
-      paddingBottom: "1rem",
-    },
-    alignCenter: {
-      justifyContent: "center",
-    },
-  });
+  let useStyles = makeStyles(s);
   let classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <Container>
         <Grid container spacing={2} style={{justifyContent:"space-around"}}>
           <Grid item sm={5}>
-            <Card variant="outlined" className={classes.mb}>
-              <CardMedia
-                image={logo}
-                style={{ height: "5rem", backgroundSize: "contain" }}
-              ></CardMedia>
+            <Card variant="outlined" className={classes.mb,classes.mt}>
               <CardContent className={classes.centerElements}>
                 <TextField
                   label="Email"

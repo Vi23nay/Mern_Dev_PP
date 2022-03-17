@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { firebaseDB, timeStamp } from "../config/firebase";
+import { firebaseDB, firebaseStorage, timeStamp } from "../../config/firebase";
 import ReactDOM from "react-dom";
-import { AuthContext } from "../context/AuthProvider";
+import { AuthContext } from "../../context/AuthProvider";
 import {
   Card,
   CardHeader,
@@ -26,15 +26,9 @@ const VideoPost = (props) => {
   let { currentUser } = useContext(AuthContext);
   // { comment , profilePhotoUrl }
 
-  const useStyles = makeStyles({
-    videoContainerSize: {
-      height: "50%",
-    },
-  });
-  let classes = useStyles();
-
   const addCommentToCommentList = async (e) => {
-    let profilePic;
+    if(currentUser){
+      let profilePic;
     // when commenting user and post author user is same
     if (currentUser.uid == user.userId) {
       profilePic = user.profileImageUrl;
@@ -58,43 +52,46 @@ const VideoPost = (props) => {
     await firebaseDB.collection("posts").doc(postObject.pid).set(postObject);
     setCommentList(newCommentList);
     setComment("");
+    }
   };
 
   const toggleLikeIcon = async () =>{
-    if(isLiked){
-      // post liked hai to unlike the post
-      // make isLiked = false;
-      // in postDoc remove your uid in likes array !
-      // setLikesCount(1 ? null : -1);
-      let postDoc = props.postObj;
-      let filteredLikes = postDoc.likes.filter( uid =>{
-        if(uid == currentUser.uid){
-          return false;
-        }
-        else{
-          return true;
-        }
-      });
-      postDoc.likes = filteredLikes;
-      await firebaseDB.collection("posts").doc(postDoc.pid).set(postDoc);
-      setIsLiked(false);
-      likesCount == 1 ? setLikesCount(null) : setLikesCount(likesCount-1);
-    }
-    else{
-      // post liked nhi hai to like the post
-      // make isLiked = true;
-      // in postDOc add your uid in likes array !
-      // setLikesCount( null ? 1 : +1);
-      let postDoc = props.postObj;
-      postDoc.likes.push(currentUser.uid);
-      await firebaseDB.collection("posts").doc(postDoc.pid).set(postDoc);
-      setIsLiked(true);
-      likesCount == null ? setLikesCount(1) : setLikesCount(likesCount+1);
+    if(currentUser){
+      if(isLiked){
+        // post liked hai to unlike the post
+        // make isLiked = false;
+        // in postDoc remove your uid in likes array !
+        // setLikesCount(1 ? null : -1);
+        let postDoc = props.postObj;
+        let filteredLikes = postDoc.likes.filter( uid =>{
+          if(uid == currentUser.uid){
+            return false;
+          }
+          else{
+            return true;
+          }
+        });
+        postDoc.likes = filteredLikes;
+        await firebaseDB.collection("posts").doc(postDoc.pid).set(postDoc);
+        setIsLiked(false);
+        likesCount == 1 ? setLikesCount(null) : setLikesCount(likesCount-1);
+      }
+      else{
+        // post liked nhi hai to like the post
+        // make isLiked = true;
+        // in postDOc add your uid in likes array !
+        // setLikesCount( null ? 1 : +1);
+        let postDoc = props.postObj;
+        postDoc.likes.push(currentUser.uid);
+        await firebaseDB.collection("posts").doc(postDoc.pid).set(postDoc);
+        setIsLiked(true);
+        likesCount == null ? setLikesCount(1) : setLikesCount(likesCount+1);
+      }
     }
   }
 
   useEffect(async () => {
-    console.log(props);
+    if(currentUser){
     let uid = props.postObj.uid;
     let doc = await firebaseDB.collection("users").doc(uid).get();
     let user = doc.data();
@@ -122,17 +119,59 @@ const VideoPost = (props) => {
       }
     }
 
-    console.log(updatedCommentList);
     setUser(user);
     setCommentList(updatedCommentList);
+    }
+    else{
+      let uid = props.postObj.uid;
+      let doc = await firebaseDB.collection("users").doc(uid).get();
+      let user = doc.data();
+      let commentList = props.postObj.comments;
+      let likes = props.postObj.likes;
+      // {uid , comment} , {uid , comment} , {uid , comment};
+      let updatedCommentList = [];
+      for (let i = 0; i < commentList.length; i++) {
+        let commentObj = commentList[i];
+        let doc = await firebaseDB.collection("users").doc(commentObj.uid).get();
+        let commentUserPic = doc.data().profileImageUrl;
+        updatedCommentList.push({
+          profilePic: commentUserPic,
+          comment: commentObj.comment,
+        });
+      }
+
+      if (likes.length) {
+        setLikesCount(likes.length);
+      }
+
+      setCommentList(updatedCommentList);
+      setUser(user);
+    }
+    
   }, []); //comp did Mount
+
+
+  const useStyles = makeStyles({
+    videoContainerSize: {
+      height: "50%",
+    },
+    commentofuser:{
+      backgroundColor:"lightblue",
+    },
+    commentlistdiv:{
+      height:"12vh",
+      width:"100%",
+      overflow:"auto",
+    },
+  });
+  let classes = useStyles();
+
 
   return (
     <Container>
       <Card
         style={{
-          // height: "80vh",
-          width: "300px",
+          width: "80%",
           margin: "auto",
           padding: "10px",
           marginBottom: "20px",
@@ -144,9 +183,15 @@ const VideoPost = (props) => {
           <Video
             className={classes.videoContainerSize}
             src={props.postObj.videoLink}
+            t={props.postObj.videofiletype}
           ></Video>
         </div>
+
         <div>
+          {
+            (currentUser)?
+            (
+              <div>
           {isLiked ? (
             <Favorite
               onClick={() => toggleLikeIcon()}
@@ -156,22 +201,41 @@ const VideoPost = (props) => {
             <FavoriteBorder onClick={() => toggleLikeIcon()}></FavoriteBorder>
           )}
         </div>
-
-        {likesCount && (
+            )
+            :
+            (
+             <></>
+            )
+          }
+        </div>
+       
+          {likesCount && (
           <div>
             <Typography variant="p">Liked by {likesCount} others </Typography>
           </div>
         )}
+
+
+      <Typography variant="p">{props.postObj.descriptionofpost}</Typography>
+
+
+        <div>
+        { (currentUser)?
+        (
+          <div>
         <Typography variant="p">Comments</Typography>
         <TextField
           variant="outlined"
           label="Add a comment"
           size="small"
+          className={classes.commentofuser}
+          style={{border:"2px solid white",borderColor:'blue'}}
           value={comment}
           onChange={(e) => {
             setComment(e.target.value);
           }}
         ></TextField>
+
         <Button
           variant="contained"
           color="secondary"
@@ -179,7 +243,16 @@ const VideoPost = (props) => {
         >
           Post
         </Button>
-
+          </div>
+        )
+        :
+        (
+          <></>
+        )
+}
+        </div>
+        
+        <div className={classes.commentlistdiv}>
         {commentList.map((commentObj) => {
           return (
             <>
@@ -188,36 +261,51 @@ const VideoPost = (props) => {
             </>
           );
         })}
+        </div>
+       
+        
+
       </Card>
     </Container>
   );
 };
 
 function Video(props) {
-  const handleAutoScroll = (e) => {
-    //   console.log(e);
-    //   let next = ReactDOM.findDOMNode(e.target).parentNode.parentNode.parentNode
-    //     .nextSibling;
-    //   console.log(next);
-    //   if (next) {
-    //     next.scrollIntoView({ behaviour: "smooth" });
-    //     e.target.muted = "true";
-    //   }
-  };
+
   return (
-    <video
-      style={{
-        height: " 100%",
-        width: "100%",
-      }}
-      muted={false}
-      onEnded={handleAutoScroll}
-      onClick={(e) => {
-        console.log(timeStamp());
-      }}
-    >
-      <source src={props.src} type="video/mp4"></source>
-    </video>
+    <div>
+      {
+      (props.t == 'jpg' || props.t == 'png' || props.t == 'jpeg') ?
+      (
+        <img
+        style={{
+          height: " 100%",
+          width: "100%",
+        }}
+
+        src={props.src} alt="Some Error Occured please try again"
+      >
+        
+      </img>
+      )
+      :
+      (
+        <video
+        style={{
+          height: " 100%",
+          width: "100%",
+        }}
+        muted={true}
+        controls loop autoplay={0}
+        alt="Some Error Occured please try again"
+      >
+        <source src={props.src} type="video/mp4"></source>
+      </video>
+      )
+    }
+    </div>
+    
+   
   );
 }
 
